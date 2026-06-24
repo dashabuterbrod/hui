@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Курочка BARBEQUE",
+    "price": 450,
+    "image": "/images/chicken.jpg",
+    "category": "Горячие блюда"
+  },
+  {
+    "id": 2,
+    "title": "Рождественский сюрприз",
+    "price": 600,
+    "image": "/images/roast.jpg",
+    "category": "Горячие блюда"
+  }
+]
