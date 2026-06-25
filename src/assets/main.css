@@ -1,16 +1,31 @@
+/* Импорт шрифта */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
-body {
-  font-family: 'Montserrat', sans-serif;
+/* Глобальный сброс стилей */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Arial', sans-serif; }
+/* Настройка тела страницы */
+body {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9f9f9; /* Цвет фона всей страницы */
+  color: #333;
+  line-height: 1.5; /* Улучшает читаемость текста */
+}
+
+/* Общий контейнер для контента */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
+/* Дополнительные глобальные стили для кнопок и ссылок (чтобы шрифт был везде) */
+button, input, textarea {
+  font-family: 'Montserrat', sans-serif;
+}

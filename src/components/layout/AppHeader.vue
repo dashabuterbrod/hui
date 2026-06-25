@@ -27,7 +27,14 @@
 
         <div class="actions">
           <button class="btn-discount">% Скидки ▾</button>
-          <div class="action-item"><img src="/kabinet.png" class="icon-small" />  Кабинет</div>
+
+
+          <router-link to="/profile" class="action-item-link">
+            <div class="action-item">
+              <img src="/kabinet.png" class="icon-small" /> Кабинет
+            </div>
+          </router-link>
+
           <div class="action-item"><img src="/heart.png" class="icon-small" /> Избранное</div>
           <div class="action-item"><img src="/cart.png" class="icon-small" /> Корзина</div>
         </div>
@@ -100,4 +107,11 @@ button { font-family: 'Montserrat', sans-serif; font-weight: 700; cursor: pointe
 .actions { display: flex; gap: 20px; align-items: center; font-weight: 600; cursor: pointer}
 .action-item { display: flex; align-items: center; gap: 6px; cursor: pointer; }
 button:hover { opacity: 0.9;}
+
+.action-item-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+
 </style>
