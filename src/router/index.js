@@ -1,30 +1,26 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
-import ProfileView from '../views/ProfileView.vue';
-import ProfileSettingsView from '../views/ProfileSettingsView.vue';
-import ProfileHistoryView from "@/views/ProfileHistoryView.vue";
+import HomeView from '@/views/HomeView.vue';
+import ProfileView from '@/views/ProfileView.vue';
+import FavoritesView from '@/views/FavoritesView.vue';
+import CatalogView from '@/views/CatalogView.vue';
 
 const routes = [
-  // 1. Добавлен маршрут для главной страницы
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  // 2. Маршрут для профиля
-  {
-    path: '/profile',
-    component: ProfileView,
-    children: [
-      { path: '', component: ProfileHistoryView },
-      { path: 'settings', component: ProfileSettingsView }
-    ]
-  }
+  { path: '/', name: 'home', component: HomeView },
+  { path: '/profile', component: ProfileView },
+  { path: '/favorites', name: 'favorites', component: FavoritesView },
+  { path: '/catalog', name: 'catalog', component: CatalogView }
 ];
 
 const router = createRouter({
   history: createWebHistory(),
   routes
+});
+
+// Отладочный лог: откройте консоль F12, если при клике
+// там не появится "Переход на:", значит, проблема в ссылке (шаг 1)
+router.beforeEach((to, from, next) => {
+  console.log('Переход на:', to.path);
+  next();
 });
 
 export default router;

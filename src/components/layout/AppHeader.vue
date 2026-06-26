@@ -35,7 +35,8 @@
             </div>
           </router-link>
 
-          <div class="action-item"><img src="/heart.png" class="icon-small" /> Избранное</div>
+          <router-link to="/favorites" class="favorites">Избранное</router-link>
+
           <div class="action-item"><img src="/cart.png" class="icon-small" /> Корзина</div>
         </div>
       </div>
@@ -66,7 +67,7 @@ import AppLogo from '../ui/AppLogo.vue';
 .logo-sticker {
   position: absolute !important;
   left: 50% !important;
-  top: -45px !important; /* Настрой по высоте, если нужно выше/ниже */
+  top: -45px !important;
   transform: translateX(-50%) !important;
   z-index: 100 !important;
 
@@ -100,18 +101,22 @@ button, .action-item {
   border: none;
   transition: 0.2s;
 }
-button { font-family: 'Montserrat', sans-serif; font-weight: 700; cursor: pointer; border-radius: 8px; border: none; transition: 0.2s; cursor: pointer;}
+button { font-family: 'Montserrat', sans-serif; font-weight: 700; cursor: pointer; border-radius: 8px; border: none; transition: 0.2s; }
 .btn-catalog { background: #8BC34A; color: white; padding: 12px 24px; display: flex; align-items: center; gap: 8px; cursor: pointer }
 .btn-discount { background: #FF5722; color: white; padding: 12px 20px; }
 .search-input { flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
 .actions { display: flex; gap: 20px; align-items: center; font-weight: 600; cursor: pointer}
 .action-item { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+.favorites {display: flex; align-items: center; gap: 6px; cursor: pointer; font-weight: bold;}
 button:hover { opacity: 0.9;}
 
 .action-item-link {
   text-decoration: none;
   color: inherit;
 }
-
+.favorites{
+  text-decoration: none;
+  color: inherit;
+}
 
 </style>

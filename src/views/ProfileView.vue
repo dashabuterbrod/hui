@@ -62,9 +62,9 @@ import AppHeader from '@/components/layout/AppHeader.vue';
 import AppFooter from '@/components/layout/AppFooter.vue';
 import OrderCard from '@/components/profile/OrderCard.vue';
 import MiniCart from '@/components/MiniCart.vue';
-import ProfileSettingsView from '@/views/ProfileSettingsView.vue'; // Убедись, что путь правильный
+import ProfileSettingsView from '@/views/ProfileSettingsView.vue';
 
-const currentTab = ref('history'); // Состояние текущей вкладки
+const currentTab = ref('history');
 
 const orders = ref([
   { id: 1, date: '12.03.2020 12:45', address: 'ул.Лимена-панчанки, д. 12, под. 4, кв. 312', total: 956 },
@@ -101,14 +101,12 @@ const orders = ref([
 
 .filter-bar { margin-bottom: 20px; font-size: 14px; color: #666; }
 
-
-
 .back-nav {
   margin-bottom: 20px;
 }
 
 .back-link {
-  color: #8BC34A; /* Цвет лайма, как в дизайне */
+  color: #8BC34A;
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
