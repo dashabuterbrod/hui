@@ -8,7 +8,7 @@
 
           <div class="back-nav">
             <router-link to="/" class="back-link">
-              ← На главную
+               На главную
             </router-link>
           </div>
 
@@ -118,4 +118,5 @@ const orders = ref([
 .back-link:hover {
   opacity: 0.7;
 }
+
 </style>

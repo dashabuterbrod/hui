@@ -126,8 +126,6 @@
         </div>
 
 
-
-
         <aside class="cart-sidebar">
           <div class="cart-box">
             <h3>Здравствуйте, Михаил!</h3>
@@ -310,7 +308,7 @@ const newsList = [
 
 
 
-/* Баннер обратной связи */
+
 .feedback-banner {
   background: #8BC34A;
   color: white;
@@ -346,7 +344,7 @@ const newsList = [
 
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 карточки в ряд */
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-top: 20px;
 }
@@ -386,7 +384,7 @@ const newsList = [
 .banner-section {
   position: relative;
   width: 100%;
-  background: #E84D4D; /* Основной цвет баннера с макета */
+  background: #E84D4D;
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 40px;
@@ -430,7 +428,7 @@ const newsList = [
   border-radius: 12px;
 }
 .banner-section {
-  background-color: #e84d4d; /* Тот самый красный цвет с макета */
+  background-color: #e84d4d;
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 40px;
@@ -484,12 +482,12 @@ const newsList = [
 
 .chef-card {
   display: flex;
-  gap: 20px; /* Отступ между фото шефа и рецептами */
+  gap: 20px;
   align-items: flex-start;
 }
 
 .chef-avatar {
-  width: 300px; /* Фиксированная ширина как на макете */
+  width: 300px;
   flex-shrink: 0;
   position: relative;
   border-radius: 12px;

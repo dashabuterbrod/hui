@@ -22,14 +22,14 @@
           <ProductCard v-for="i in 4" :key="'first-'+i" :product="sampleProduct" />
 
           <div class="promo-banner">
-            <h3>Закажите домой!</h3>
-            <p>Скидка 10% на первый заказ</p>
-            <div class="eda">
-              <img src="/product.png" alt="eda" />
+            <div class="banner-text">
+              <h3>Закажите домой!</h3>
+              <p>Скидка 10% на первый заказ</p>
             </div>
-
+            <div class="eda">
+              <img src="/product.png" alt="Продукты" />
+            </div>
           </div>
-
           <ProductCard v-for="i in 8" :key="'second-'+i" :product="sampleProduct" />
         </div>
       </div>
@@ -96,7 +96,45 @@ const sampleProduct = {
   border-radius: 8px;
   border: 1px solid #ddd;
 }
-.eda {
+.promo-banner {
+  grid-column: span 4;
+  background: #FFC107;
+  padding: 0 40px;
+  border-radius: 12px;
+  margin: 20px 0;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 160px;
+  overflow: hidden;
+}
 
+.banner-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.promo-banner h3 {
+  font-size: 24px;
+  margin: 0 0 8px 0;
+  font-weight: bold;
+}
+
+.promo-banner p {
+  font-size: 18px;
+  margin: 0;
+}
+
+.eda {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.eda img {
+  height: 50%;
+  object-fit: contain;
 }
 </style>

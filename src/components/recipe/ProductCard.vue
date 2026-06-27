@@ -2,7 +2,6 @@
   <div class="product-card">
     <div class="badge" v-if="product?.discount">-{{ product.discount }}%</div>
 
-    <div class="wishlist-icon">♥</div>
 
     <img :src="product?.image || '/milk.png'" :alt="product?.name" class="product-img" />
 
@@ -19,10 +18,26 @@
       <span class="price">{{ product?.price || 120 }} руб.</span>
       <span class="old-price" v-if="product?.oldPrice">{{ product.oldPrice }} руб.</span>
     </div>
+    <button @click="store.addToCart(product)" class="add-to-cart">
+      В корзину
+    </button>
+    <div class="button-group">
 
-    <button class="add-to-cart">В корзину</button>
+      <button @click="store.toggleFavorite(product)" class="btn-favorite">
+        В избранное
+      </button>
+    </div>
+
   </div>
+
 </template>
+
+<script setup>
+import { useCartStore } from '../../stores/useCartStore';
+const store = useCartStore();
+defineProps(['product']);
+</script>
+
 
 <style scoped>
 .product-card {
@@ -36,7 +51,6 @@
   height: 100%;
 }
 
-/* Элементы дизайна */
 .wishlist-icon { position: absolute; top: 10px; right: 10px; color: #ddd; font-size: 18px; }
 .badge { position: absolute; top: 10px; left: 10px; background: #ff5722; color: white; padding: 2px 6px; border-radius: 4px; font-size: 11px; }
 
@@ -57,6 +71,29 @@
 .add-to-cart {
   width: 100%; background: #8BC34A; color: white; border: none;
   padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer;
-  margin-top: auto; /* Важно: прижимает кнопку вниз */
+  margin-top: auto;
+}
+
+.btn-favorite.active {
+  background: #fff5f5;
+  border-color: #ff5252;
+  color: #ff5252;
+}
+
+.btn-favorite {
+  width: 100%;
+  background: transparent;
+  color: #666;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-favorite:hover {
+  border-color: #ff5252;
+  color: #ff5252;
 }
 </style>

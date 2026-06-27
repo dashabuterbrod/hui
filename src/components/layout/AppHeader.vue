@@ -20,7 +20,13 @@
 
     <div class="main-bar">
       <div class="container-inner main-content">
-        <button class="btn-catalog"><img src="/lupa.png" class="icon-small" />Каталог</button>
+
+        <router-link to="/catalog" class="catalog-link">
+          <button class="btn-catalog">
+            <img src="/lupa.png" class="icon-small" />Каталог
+          </button>
+        </router-link>
+
         <input type="text" placeholder="Купить молоко" class="search-input" />
 
         <AppLogo class="logo-sticker" />
@@ -53,17 +59,16 @@ import AppLogo from '../ui/AppLogo.vue';
 
 .container-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;cursor: pointer }
 
-/* Верхняя серая полоса */
+
 .top-bar { background: #4f4f4f; color: white; padding: 8px 0; font-size: 12px; }
 .top-bar__left, .top-bar__right { display: flex; align-items: center; gap: 20px; }
 .icon-small { width: 14px; height: 14px; object-fit: contain; }
 .bonus-link { color: #cddc39; }
 
-/* Основная часть */
+
 .main-bar { background: white; padding: 20px 0; position: relative; border-bottom: 1px solid #eee;}
 .main-content { display: flex; align-items: center; gap: 20px; }
 
-/* Логотип */
 .logo-sticker {
   position: absolute !important;
   left: 50% !important;
@@ -71,7 +76,7 @@ import AppLogo from '../ui/AppLogo.vue';
   transform: translateX(-50%) !important;
   z-index: 100 !important;
 
-  /* Строго квадратный размер */
+
   width: 100px !important;
   height: 100px !important;
 
@@ -79,7 +84,6 @@ import AppLogo from '../ui/AppLogo.vue';
   border-radius: 50% !important;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
 
-  /* Убираем всё, что может менять форму */
   padding: 0 !important;
   margin: 0 !important;
   flex: none !important;
@@ -87,7 +91,6 @@ import AppLogo from '../ui/AppLogo.vue';
   overflow: hidden !important;
 }
 
-/* Принудительно ограничиваем картинку внутри */
 .logo-sticker img, .logo-sticker svg {
   width: 100% !important;
   height: 100% !important;
@@ -118,5 +121,10 @@ button:hover { opacity: 0.9;}
   text-decoration: none;
   color: inherit;
 }
-
+.catalog-link {
+  text-decoration: none;
+}
+.router-link-active .btn-catalog {
+  background: #75a740;
+}
 </style>

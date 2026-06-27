@@ -4,18 +4,26 @@
 
     <main class="layout-wrapper">
       <div class="content-area">
-        <h1>Избранное <span v-if="favorites.length > 0">{{ favorites.length }} товаров</span></h1>
+        <h1>Избранное <span v-if="store?.favorites?.length > 0">{{ store.favorites.length }} товаров</span></h1>
 
-        <div v-if="favorites.length === 0" class="empty-state">
-          <img src="/public/eda.png" alt="Пусто" />
+        <div v-if="!store?.favorites?.length" class="empty-state">
+          <img src="/eda.png" alt="Пусто" />
           <h2>Добавьте товары в избранное</h2>
-          <p>Для того чтобы добавить товары в избранное, просто нажмите на значок 🤍 в углу товара</p>
-          <router-link to="/catalog" class="btn-catalog">Перейти в каталог</router-link>
+          <p>Чтобы добавить товары, нажмите на сердце</p>
+
+          <div class="button-group">
+            <router-link to="/catalog" class="btn-catalog">Перейти в каталог</router-link>
+            <router-link to="/" class="btn-home">На главную</router-link>
+          </div>
+
         </div>
 
         <div v-else class="products-grid">
-          <div v-for="product in favorites" :key="product.id">
-          </div>
+          <ProductCard
+              v-for="product in store.favorites"
+              :key="product.id"
+              :product="product"
+          />
         </div>
       </div>
 
@@ -29,16 +37,23 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { useCartStore } from '@/stores/useCartStore.js';
+const store = useCartStore();
 import AppHeader from '@/components/layout/AppHeader.vue';
 import AppFooter from '@/components/layout/AppFooter.vue';
 import MiniCart from '@/components/MiniCart.vue';
+import ProductCard from '@/components/recipe/ProductCard.vue';
 
-// Пока массив пуст — будет показываться "пустое" состояние
-const favorites = ref([]);
+
 </script>
 
 <style scoped>
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
 .layout-wrapper {
   display: grid;
   grid-template-columns: 1fr 320px;
@@ -48,7 +63,6 @@ const favorites = ref([]);
   padding: 20px;
 }
 
-/* Стили для пустого состояния */
 .empty-state {
   text-align: center;
   padding: 60px 20px;
@@ -72,4 +86,26 @@ const favorites = ref([]);
 }
 
 .btn-catalog:hover { background: #8BC34A; color: white; }
+
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-home {
+  padding: 12px 30px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  color: #333;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.btn-home:hover {
+  background: #e0e0e0;
+}
 </style>

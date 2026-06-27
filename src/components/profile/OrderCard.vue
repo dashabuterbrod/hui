@@ -42,16 +42,15 @@
 
 <script setup>
 import { ref } from 'vue';
-const isExpanded = ref(false); // Состояние
+const isExpanded = ref(false);
 </script>
 
 <style scoped>
-/* Стили для того, чтобы всё встало на места */
+
 .order-card { display: flex; gap: 20px; border: 1px solid #eee; padding: 25px; border-radius: 12px; margin-bottom: 20px; position: relative; }
 .items-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; overflow: hidden; max-height: 380px; }
 .items-grid.expanded { max-height: none; }
 
-/* Стили карточки внутри заказа */
 .item { border: 1px solid #eee; padding: 10px; border-radius: 8px; position: relative; }
 .item img { width: 100%; height: 100px; object-fit: contain; }
 .wishlist-icon { position: absolute; top: 5px; right: 5px; color: #ccc; }
@@ -79,12 +78,12 @@ const isExpanded = ref(false); // Состояние
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
   overflow: hidden;
-  max-height: 250px; /* Начальная высота */
-  transition: max-height 0.3s ease; /* Плавность */
+  max-height: 250px;
+  transition: max-height 0.3s ease;
 }
 
 .items-grid.expanded {
-  max-height: 2000px; /* Достаточно большое число, чтобы все влезло */
+  max-height: 2000px;
 }
 
 .order-meta {
@@ -102,13 +101,13 @@ const isExpanded = ref(false); // Состояние
 }
 
 .total-price-wrapper .total-value {
-  color: #FF5722; /* Цвет цены как на макете */
+  color: #FF5722;
   font-size: 20px;
   margin-left: 5px;
 }
 
 .repeat-order-btn {
-  background: #CDDC39; /* Цвет "Лайм" */
+  background: #CDDC39;
   color: #333;
   border: none;
   padding: 12px 20px;
@@ -152,13 +151,13 @@ const isExpanded = ref(false); // Состояние
 }
 
 .total-price-wrapper .total-value {
-  color: #FF5722; /* Цвет цены как на макете */
+  color: #FF5722;
   font-size: 20px;
   margin-left: 5px;
 }
 
 .repeat-order-btn {
-  background: #CDDC39; /* Цвет "Лайм" */
+  background: #CDDC39;
   color: #333;
   border: none;
   padding: 12px 20px;
@@ -187,7 +186,7 @@ const isExpanded = ref(false); // Состояние
 }
 
 .btn-repeat{
-  background: #CDDC39; /* Цвет "Лайм" */
+  background: #CDDC39;
   color: #333;
   border: none;
   padding: 12px 20px;
